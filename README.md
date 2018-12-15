@@ -11,9 +11,6 @@ TODO:
 - Nvidia Drive PX-2 : future
 - TODO: add
 
-# Hardware Setup
-TODO: add detailed instructions
-
 # Roadmap
 
 ## System
