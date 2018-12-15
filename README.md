@@ -2,12 +2,13 @@
 TODO: 
 - add detailed description
 - create wiki, move large parts (installation, roadmap) to wiki
+- add nice image
 
 # Hardware
 - ZED stereo camera
 - Velodyne VLP-16 LIDAR
-- Nvidia TX-1            - **currently**
-- Nvidia Drive PX-2   - future
+- Nvidia TX-1 : **currently**
+- Nvidia Drive PX-2 : future
 - TODO: add
 
 # Hardware Setup
