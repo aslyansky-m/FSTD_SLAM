@@ -7,7 +7,7 @@ Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
 ## Table of Contents
 - [Hardware](#Hardware)
-- Roadmap (#Roadmap)
+- [Roadmap](#Roadmap)
 - [License](#License)
 
 # Hardware
