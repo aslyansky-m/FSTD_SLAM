@@ -6,9 +6,17 @@ TODO:
 Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
 ## Table of Contents
-- [Hardware](#Hardware)
+- [Installation](#Installation)
 - [Roadmap](#Roadmap)
+- [Hardware](#Hardware)
+- [Agorithms](#Agorithms)
 - [License](#License)
+
+# Installation
+See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)
+
+# Roadmap
+See [wiki/Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
 
 # Hardware
 - ZED stereo camera
@@ -16,12 +24,6 @@ Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 - Nvidia Jetson TX1 : **currently**
 - Nvidia Drive PX2 : future
 - TODO: add
-
-# Roadmap
-See [wiki/Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
-
-# Installation
-See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)
 
 # Agorithms:
 - [LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
