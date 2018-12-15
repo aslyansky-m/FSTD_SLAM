@@ -5,6 +5,11 @@ TODO:
 
 Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
+## Table of Contents
+- [Hardware](#Hardware)
+- Roadmap (#Roadmap)
+- [License](#License)
+
 # Hardware
 - ZED stereo camera
 - Velodyne VLP-16 LIDAR
@@ -21,3 +26,6 @@ See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installati
 # Agorithms:
 - [LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
 - [Visual SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Visual-SLAM)
+
+# License:
+  TODO: choose
