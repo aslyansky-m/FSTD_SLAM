@@ -26,8 +26,8 @@ See [wiki/Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
 - TODO: add
 
 # Agorithms:
-- [LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
-- [Visual SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Visual-SLAM)
+- [wiki/LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
+- [wiki/Visual SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Visual-SLAM)
 
 # License:
   TODO: choose
