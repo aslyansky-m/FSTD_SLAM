@@ -40,24 +40,24 @@ TODO:
 - fusion with camera
 
 # Installation
-We will work under Ubuntu 16.04 and [ROS] Kinetic
+We will work under Ubuntu 16.04 and [ROS](http://wiki.ros.org/) Kinetic
 
 - Jetson or Drive Firmware
 TODO: add
 
-- ROS/ [Kinetic] 
-Follow the instructions in [Kinetic] 
+- ROS/ [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) 
+Follow the instructions in [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) 
 
-- ROS/ [velodyne]
+- ROS/ [velodyne](http://http://wiki.ros.org/velodyne)
 ``` sh
 sudo apt-get install ros-kinetic-velodyne
 cd ~/catkin_ws/src/ && git clone https://github.com/ros-drivers/velodyne.git
 rosdep install --from-paths src --ignore-src --rosdistro YOURDISTRO -y
 cd ~/catkin_ws/ && catkin_make
 ```
-Also, see [VLP16 tutorial]
+Also, see [VLP16 tutorial](http://http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16)
 
-- ROS/ [zed-ros-wrapper]
+- ROS/ [zed-ros-wrapper](http://http://wiki.ros.org/zed-ros-wrapper)
 Point Cloud Library dependencies:
 ``` sh
 sudo apt-get install libpcl1
@@ -85,9 +85,3 @@ Ground removal:
 Euclidean clustering:
 - [lab 32](https://github.com/cse481wi18/cse481wi18/wiki/Lab-32%3A-Euclidean-clustering)
 - [pcl](http://pointclouds.org/documentation/tutorials/conditional_euclidean_clustering.php)
-
- [ROS]: <http://wiki.ros.org/>
- [Kinetic]: <http://wiki.ros.org/kinetic/Installation/Ubuntu>
- [zed-ros-wrapper]: <http://http://wiki.ros.org/zed-ros-wrapper>
- [velodyne]: <http://http://wiki.ros.org/velodyne>
- [VLP16 tutorial]: <http://http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16>
