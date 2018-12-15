@@ -46,7 +46,7 @@ We will work under Ubuntu 16.04 and [ROS](http://wiki.ros.org/) Kinetic
 TODO: add
 
 - ROS/ [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) 
-Follow the instructions in [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) 
+(follow the instructions)
 
 - ROS/ [velodyne](http://http://wiki.ros.org/velodyne)
 ``` sh
