@@ -18,12 +18,6 @@ See [wiki/Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
 # Installation
 See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)
 
-# Helper
-## LIDAR SLAM
-Ground removal:
-- [lab 30](https://github.com/cse481wi18/cse481wi18/wiki/Lab-30%3A-Introduction-to-point-cloud-processing)
-- [lab 31](https://github.com/cse481wi18/cse481wi18/wiki/Lab-31%3A-Planar-segmentation)
-
-Euclidean clustering:
-- [lab 32](https://github.com/cse481wi18/cse481wi18/wiki/Lab-32%3A-Euclidean-clustering)
-- [pcl](http://pointclouds.org/documentation/tutorials/conditional_euclidean_clustering.php)
+# Agorithms:
+- [LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
+- [Visual SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Visual-SLAM)
