@@ -1,13 +1,6 @@
 # Simultaneous Localization and Mapping algorithms for Formula Student Driverless @Technion
 TODO: add detailed description
-TODO: create wiki, move some parts to wiki
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
+TODO: create wiki, move large parts (installation, roadmap) to wiki
 
 # Hardware
 - ZED stereo camera
