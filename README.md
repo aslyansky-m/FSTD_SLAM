@@ -8,8 +8,8 @@ Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 # Hardware
 - ZED stereo camera
 - Velodyne VLP-16 LIDAR
-- Nvidia TX-1 : **currently**
-- Nvidia Drive PX-2 : future
+- Nvidia Jetson TX1 : **currently**
+- Nvidia Drive PX 2 : future
 - TODO: add
 
 # Roadmap
