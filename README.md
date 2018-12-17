@@ -6,8 +6,8 @@ TODO:
 Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
 ## Table of Contents
-- [Installation](#Installation)  
-- [Agorithms](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Agorithms)
+- [Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)  
+- [Agorithms](#Agorithms)
 - [Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
 - [Hardware](#Hardware)  
 
