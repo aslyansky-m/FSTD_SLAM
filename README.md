@@ -6,11 +6,11 @@ TODO:
 Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
 ## Table of Contents
-- [Installation](#Installation)
-- [Roadmap](#Roadmap)
-- [Hardware](#Hardware)
-- [Agorithms](#Agorithms)
-- [License](#License)
+- [Installation](#Installation)  
+- [Agorithms](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Agorithms)
+- [Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
+- [Hardware](#Hardware)  
+
 
 # Installation
 See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)
@@ -28,6 +28,3 @@ See [wiki/Roadmap](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Roadmap)
 # Agorithms:
 - [wiki/LIDAR SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/LIDAR-SLAM)
 - [wiki/Visual SLAM](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Visual-SLAM)
-
-# License:
-  TODO: choose
