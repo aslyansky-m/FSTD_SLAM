@@ -8,6 +8,17 @@ Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 ## Table of Contents
 - [Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)  
 - [Roadmap](#Roadmap) 
+  - [Visual Cone Detection](#Visual-Cone-Detection)
+  - [Visual SLAM Exploration](#Visual-SLAM-Exploration)
+  - [Visual SLAM System](#Visual-SLAM-System)
+  - [System](#System)
+  - [Simulator](#Simulator)
+  - [Hardware ](#Hardware)
+  - [LIDAR Setup](#LIDAR Setup)
+  - [LIDAR Cone Detection](#LIDAR-Cone-Detection)
+  - [LIDAR SLAM Exploration](#LIDAR-SLAM-Exploration)
+  - [LIDAR Landmark Based SLAM](#LIDAR-Landmark-Based-SLAM)
+  - [Model Predictive Control](#Model-Predictive-Control)
 
 
 # Installation
