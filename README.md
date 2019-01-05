@@ -11,14 +11,14 @@ Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
   - [Visual Cone Detection](#Visual-Cone-Detection)
   - [Visual SLAM Exploration](#Visual-SLAM-Exploration)
   - [Visual SLAM System](#Visual-SLAM-System)
-  - [System](#System)
-  - [Simulator](#Simulator)
-  - [Hardware ](#Hardware)
   - [LIDAR Setup](#LIDAR-Setup)
   - [LIDAR Cone Detection](#LIDAR-Cone-Detection)
   - [LIDAR SLAM Exploration](#LIDAR-SLAM-Exploration)
   - [LIDAR Landmark Based SLAM](#LIDAR-Landmark-Based-SLAM)
   - [Model Predictive Control](#Model-Predictive-Control)
+  - [System](#System)
+  - [Simulator](#Simulator)
+  - [Hardware ](#Hardware)
 
 
 # Installation
@@ -26,9 +26,6 @@ See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installati
 
 # Roadmap
 Currently working on **bold**
-
-----
-# Current Focus
 
 ## Visual Cone Detection
 - [ ] setup [AirSim](https://github.com/FSTDriverless/AirSim)
@@ -77,44 +74,6 @@ Currently working on **bold**
 - [ ] implement data fusion in orbslam
 - [ ] test on the car
 
-----
-# Additional Directions
-
-## System
-- [ ] define ROS node topology
-- [ ] add documentation 
-
-## Simulator 
-- [ ] [eufs_sim](https://github.com/eufsa/eufs_sim) - gazebo simulator
-  - [x] compiled
-  - [ ] bugfix - no car
-- [ ] [AirSim](https://github.com/FSTDriverless/AirSim) - Microsoft's framework
-  - [ ] test on linux
-  - [ ] add lidar, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md)
-  - [ ] add IMU, see [here](https://github.com/Microsoft/AirSim/tree/master/AirLib/include/sensors/imu)
-  - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
-
-## Hardware
-- [x] camera
-- [x] LIDAR
-- [x] Nvidia Jetson setup
-- [x] capture with rosbag
-- [x] install and run on the car
-- [x] capture demo content 
-- [x] capture real content
-- [X] ~~Nvidia Drive PX2 setup~~ 
-- [X] after meeting with Nvidia decided to use Jetson AGX Xavier
-- [ ] improve capture
-  - [ ] debug ZED low fps
-  - [ ] find good IMU
-- [ ] automate capture - launch files
-- [ ] capture new content
-- [ ] Nvidia Jetson Xavier setup
-- [ ] install and run on the car
-- [ ] TODO: update regarding the electric car
-  - [ ] sensors
-  - [ ] control
-
 ## LIDAR Setup
 - [x] install ROS velodyne drivers
 - [x] test and store data
@@ -153,10 +112,45 @@ Currently working on **bold**
    - [ ] Kalman Filter vs Graph Optimization
    - [ ] [g2o](https://github.com/RainerKuemmerle/g2o) vs [gtsam](https://bitbucket.org/gtborg/gtsam)
 
+## System
+- [ ] define ROS node topology
+- [ ] add documentation 
+
+## Simulator 
+- [ ] [eufs_sim](https://github.com/eufsa/eufs_sim) - gazebo simulator
+  - [x] compiled
+  - [ ] bugfix - no car
+- [ ] [AirSim](https://github.com/FSTDriverless/AirSim) - Microsoft's framework
+  - [ ] test on linux
+  - [ ] add lidar, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md)
+  - [ ] add IMU, see [here](https://github.com/Microsoft/AirSim/tree/master/AirLib/include/sensors/imu)
+  - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
+
+## Hardware
+- [x] camera
+- [x] LIDAR
+- [x] Nvidia Jetson setup
+- [x] capture with rosbag
+- [x] install and run on the car
+- [x] capture demo content 
+- [x] capture real content
+- [X] ~~Nvidia Drive PX2 setup~~ 
+- [X] after meeting with Nvidia decided to use Jetson AGX Xavier
+- [ ] improve capture
+  - [ ] debug ZED low fps
+  - [ ] find good IMU
+- [ ] automate capture - launch files
+- [ ] capture new content
+- [ ] Nvidia Jetson Xavier setup
+- [ ] install and run on the car
+- [ ] TODO: update regarding the electric car
+  - [ ] sensors
+  - [ ] control
+  
 ## Model Predictive Control
 - [ ] explore different options:
-  - [MPCC](https://github.com/alexliniger/MPCC) Model Predictive Contouring Controller (MPCC) for Autonomous Racing
-  - [MPPI](https://github.com/AutoRally/autorally/wiki/Model-Predictive-Path-Integral-Controller-(MPPI)) Model Predictive Path Integral Controller (MPPI)
+  - [MPCC](https://github.com/alexliniger/MPCC) Model Predictive Contouring Controller for Autonomous Racing
+  - [MPPI](https://github.com/AutoRally/autorally/wiki/Model-Predictive-Path-Integral-Controller-(MPPI)) Model Predictive Path Integral Controller
 - [ ] start working on simulator
 
 
