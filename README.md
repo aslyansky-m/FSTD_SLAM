@@ -94,6 +94,8 @@ Currently working on **bold**
 - [ ] additional filtering
 - [ ] color from intensity
 - [ ] color from camera
+- [ ] improvements
+  - [SqueezeSeg](https://github.com/BichenWuUCB/SqueezeSeg)
 
 ## LIDAR SLAM Exploration
 - [x] test off the shelf LIDAR SLAM solutions
