@@ -40,7 +40,8 @@ Currently working on **bold**
   - see [here](https://github.com/jacksonxliu/YOLOv3-tiny-custom-object-detection)
 - [ ] test inference
 - [ ] test inference performance on Xavier
-- [ ] annotate real data
+- [ ] **annotate real data**
+  - use [labelImg](https://github.com/tzutalin/labelImg)
 - [ ] retrain the network
 - [ ] test in real-world
 - [ ] improvements:
