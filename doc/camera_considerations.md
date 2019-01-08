@@ -18,7 +18,7 @@
     - cons: rolling shutter, expensive
   - [DUO mlx](https://duo3d.com/product/duo-minilx-lv1#tab=overview), **695$**
     - pros: very wide FOV, accurate
-    - - expensive
+    - cons: expensive
   - [mynt](https://mynteyeai.com/products/mynt-eye-stereo-camera), **249$**
     - pros: seems OK accordingly to **5**
   - [intel realsense d435i](https://click.intel.com/intel-realsense-depth-camera-d435i-imu.html): **199$**
