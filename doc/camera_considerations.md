@@ -32,7 +32,10 @@
   - [5 - survey of ROS supported cameras](https://rosindustrial.org/3d-camera-survey/)
 
 ## Conclusions:
-- Mynt
+- Mynt proved to be good for vi-slam, it's the best option available:
+  - [MYNT-EYE-S-SDK](https://github.com/slightech/MYNT-EYE-S-SDK)
+  - [MYNT-EYE-S-SDK-Guide](https://github.com/slightech/MYNT-EYE-S-SDK-Guide)
 - Realsense (if for free) 
+
     
 
