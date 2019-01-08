@@ -129,8 +129,8 @@ Currently working on **bold**
   - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
 
 ## Hardware
-- [x] camera
-- [x] LIDAR
+- [x] camera - ZED
+- [x] LIDAR - Velodyne VLP-16
 - [x] Nvidia Jetson setup
 - [x] capture with rosbag
 - [x] install and run on the car
@@ -141,6 +141,10 @@ Currently working on **bold**
 - [ ] improve capture
   - [ ] debug ZED low fps
   - [ ] find good IMU, see [here](https://www.jetsonhacks.com/2016/07/01/jetson-racecar-part-9-razor-imu-ros-install/)
+- [ ] camera with integrated IMU and ROS support, consider:
+  - [Tara](https://www.e-consystems.com/3D-USB-stereo-camera.asp), 149$ - cheap
+  - [ZED mini](https://www.stereolabs.com/zed-mini/), 449$ - with color
+  - [DUO mlx](https://duo3d.com/product/duo-minilx-lv1#tab=overview), 695$ - very wide FOV, accurate
 - [ ] automate capture - launch files
 - [ ] capture new content
 - [ ] Nvidia Jetson Xavier setup
