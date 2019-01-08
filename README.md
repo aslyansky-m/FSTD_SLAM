@@ -28,6 +28,10 @@ See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installati
 Currently working on **bold**
 
 ## Visual Cone Detection
+- [ ] **annotate real data**
+  - see [instructions](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/cone_dataset.md)
+- [ ] **train [YOLOv3-tiny](https://github.com/qqwweee/keras-yolo3)**
+- [ ] test inference
 - [ ] setup [AirSim](https://github.com/FSTDriverless/AirSim)
 - [ ] add cone position information
 - [ ] dataset generation pipeline
@@ -36,14 +40,9 @@ Currently working on **bold**
   - [ ] low light
   - [ ] weather
 - [ ] generate dataset
-- [ ] train [YOLOv3-tiny](https://github.com/ultralytics/yolov3)
-  - see [here](https://github.com/jacksonxliu/YOLOv3-tiny-custom-object-detection)
-- [ ] test inference
-- [ ] test inference performance on Xavier
-- [ ] **annotate real data**
-  - use [labelImg](https://github.com/tzutalin/labelImg)
 - [ ] retrain the network
 - [ ] test in real-world
+- [ ] test inference performance on Xavier
 - [ ] improvements:
   - [ ] add sub-pixel refinement
   - [ ] add tracking
