@@ -142,6 +142,7 @@ Currently working on **bold**
   - [ ] debug ZED low fps
   - [ ] find good IMU, see [here](https://www.jetsonhacks.com/2016/07/01/jetson-racecar-part-9-razor-imu-ros-install/)
 - [ ] camera with integrated IMU and ROS support, consider:
+  - [optor](https://github.com/optor-vis/optor_vi-stereo-v1/blob/master/optor_VI_Sensor_SDK_V1.0/Optor%20User%20Manual.pdf), 149$ - cheap 
   - [Tara](https://www.e-consystems.com/3D-USB-stereo-camera.asp), 149$ - cheap
   - [ZED mini](https://www.stereolabs.com/zed-mini/), 449$ - with color
   - [DUO mlx](https://duo3d.com/product/duo-minilx-lv1#tab=overview), 695$ - very wide FOV, accurate
