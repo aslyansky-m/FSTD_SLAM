@@ -31,7 +31,8 @@
   - [4 - rovio issues](https://github.com/ethz-asl/rovio/issues/192#issuecomment-408401898)
   - [5 - survey of ROS supported cameras](https://rosindustrial.org/3d-camera-survey/)
 
-## Conclusion 
-- Mynt or Realsense (if for free) 
+## Conclusions:
+- Mynt
+- Realsense (if for free) 
     
 
