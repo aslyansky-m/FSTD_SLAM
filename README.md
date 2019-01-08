@@ -140,7 +140,7 @@ Currently working on **bold**
 - [X] after meeting with Nvidia decided to use Jetson AGX Xavier
 - [ ] improve capture
   - [ ] debug ZED low fps
-  - [ ] find good IMU
+  - [ ] find good IMU, see [here](https://www.jetsonhacks.com/2016/07/01/jetson-racecar-part-9-razor-imu-ros-install/)
 - [ ] automate capture - launch files
 - [ ] capture new content
 - [ ] Nvidia Jetson Xavier setup
