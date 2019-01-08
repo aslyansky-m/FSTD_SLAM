@@ -129,7 +129,25 @@ Currently working on **bold**
   - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
   
 ## Hardware
-moved to [here](doc/hardware.md)
+- [x] camera - ZED
+- [x] LIDAR - Velodyne VLP-16
+- [x] Nvidia Jetson setup
+- [x] capture with rosbag
+- [x] install and run on the car
+- [x] capture demo content 
+- [x] capture real content
+- [X] ~~Nvidia Drive PX2 setup~~ 
+- [X] after meeting with Nvidia decided to use Jetson AGX Xavier
+- [ ] improve capture
+  - [ ] find better camera + IMU, see [camera_considerations](doc/camera_considerations.md)
+  - [ ] debug low fps
+- [ ] automate capture - launch files
+- [ ] capture new content
+- [ ] Nvidia Jetson Xavier setup
+- [ ] install and run on the car
+- [ ] TODO: update regarding the electric car
+  - [ ] sensors
+  - [ ] control
   
 ## Model Predictive Control
 - [ ] explore different options:
