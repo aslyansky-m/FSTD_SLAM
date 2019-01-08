@@ -1,6 +1,6 @@
 # Cone Dataset
 Dataset is uploaded to [drive](https://drive.google.com/drive/folders/1CwCLIn6-bIfx65o2MbEX1sjESgL1O8oQ)  
-Currently we have 125 images (78 labeled) and will need to collect at least 1000 in total (in addition to synthetic data)  
+Currently we have 125 + 132 images (78 labeled) and will need to collect at least 1000 in total (in addition to synthetic data)  
 
 ## Image Annotation 
 We'll use [labelImg](https://github.com/tzutalin/labelImg) to tag the images (binary included)  
