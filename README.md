@@ -155,6 +155,10 @@ Currently working on **bold**
   - have wide FOV
   - be stereo
   - have good SDK
+  - see:
+    - [1](https://github.com/ethz-asl/mav_tools_public/wiki/Visual-Inertial-Sensors)
+    - [2](https://github.com/ethz-asl/rovio/issues/84)
+  
 - [ ] automate capture - launch files
 - [ ] capture new content
 - [ ] Nvidia Jetson Xavier setup
