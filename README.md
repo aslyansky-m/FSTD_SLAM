@@ -139,7 +139,7 @@ Currently working on **bold**
 - [X] ~~Nvidia Drive PX2 setup~~ 
 - [X] after meeting with Nvidia decided to use Jetson AGX Xavier
 - [ ] improve capture
-  - [ ] find better camera + IMU, see [camera_considerations](doc/camera_considerations.md)
+  - [ ] find better camera + IMU, see [camera considerations](doc/camera_considerations.md)
   - [ ] debug low fps
 - [ ] automate capture - launch files
 - [ ] capture new content
