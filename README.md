@@ -127,45 +127,9 @@ Currently working on **bold**
   - [ ] add lidar, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md)
   - [ ] add IMU, see [here](https://github.com/Microsoft/AirSim/tree/master/AirLib/include/sensors/imu)
   - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
-
-## Hardware
-- [x] camera - ZED
-- [x] LIDAR - Velodyne VLP-16
-- [x] Nvidia Jetson setup
-- [x] capture with rosbag
-- [x] install and run on the car
-- [x] capture demo content 
-- [x] capture real content
-- [X] ~~Nvidia Drive PX2 setup~~ 
-- [X] after meeting with Nvidia decided to use Jetson AGX Xavier
-- [ ] improve capture
-  - [ ] debug ZED low fps
-  - [ ] find good IMU, see [here](https://www.jetsonhacks.com/2016/07/01/jetson-racecar-part-9-razor-imu-ros-install/)
-- [ ] camera with integrated IMU and ROS support, consider:
-  - [survey of ROS supported cameras](https://rosindustrial.org/3d-camera-survey/)
-  - [optor](https://github.com/optor-vis/optor_vi-stereo-v1/blob/master/optor_VI_Sensor_SDK_V1.0/Optor%20User%20Manual.pdf), 149$ - cheap 
-  - [Tara](https://www.e-consystems.com/3D-USB-stereo-camera.asp), 149$ - cheap
-  - [ZED mini](https://www.stereolabs.com/zed-mini/), 449$ - with color
-  - [DUO mlx](https://duo3d.com/product/duo-minilx-lv1#tab=overview), 695$ - very wide FOV, accurate
-- camera should preferably:
-  - be ROS integrated
-  - have built-in IMU
-  - be industrial: high dynamic range, global shutter, precise calibration
-  - RGB is better than monochromatic although it depends on detector perforamce with grayscale images
-  - have wide FOV
-  - be stereo
-  - have good SDK
-  - see:
-    - [1](https://github.com/ethz-asl/mav_tools_public/wiki/Visual-Inertial-Sensors)
-    - [2](https://github.com/ethz-asl/rovio/issues/84)
   
-- [ ] automate capture - launch files
-- [ ] capture new content
-- [ ] Nvidia Jetson Xavier setup
-- [ ] install and run on the car
-- [ ] TODO: update regarding the electric car
-  - [ ] sensors
-  - [ ] control
+## Hardware
+moved to [here](doc/hardware.md)
   
 ## Model Predictive Control
 - [ ] explore different options:
