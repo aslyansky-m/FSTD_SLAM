@@ -28,24 +28,25 @@ See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installati
 Currently working on **bold**
 
 ## Visual Cone Detection
-- [ ] **annotate real data**
+- [x] **annotate real data**
   - see [instructions](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/cone_dataset.md)
-- [ ] **train [YOLOv3-tiny](https://github.com/qqwweee/keras-yolo3)**
+- [x] **train [YOLOv3-tiny](https://github.com/qqwweee/keras-yolo3)**
 - [ ] test inference
-- [ ] setup [AirSim](https://github.com/FSTDriverless/AirSim)
-- [ ] add cone position information
-- [ ] dataset generation pipeline
-- [ ] augmentation
-  - [ ] noise 
-  - [ ] low light
-  - [ ] weather
-- [ ] generate dataset
+- [ ] **setup [AirSim](https://github.com/FSTDriverless/AirSim)**
+  - [ ] add cone position information
+  - [ ] dataset generation pipeline
+  - [ ] augmentation
+    - [x] weather - built in
+    - [ ] noise 
+    - [ ] low light
+  - [ ] generate dataset
+- [ ] hyper parameter tuning
 - [ ] retrain the network
 - [ ] test in real-world
 - [ ] test inference performance on Xavier
 - [ ] improvements:
   - [ ] add sub-pixel refinement
-  - [ ] add tracking
+  - [ ] add tracking, consider [this](https://github.com/bendidi/Tracking-with-darkflow)
 
 ## Visual SLAM Exploration
 - [x] test [orbslam 2](https://github.com/raulmur/ORB_SLAM2.git)
