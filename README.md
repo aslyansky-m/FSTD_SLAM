@@ -30,7 +30,7 @@ Currently working on **bold**
 ## Visual Cone Detection
 - [x] **annotate real data**
   - see [instructions](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/cone_dataset.md)
-- [x] **train [YOLOv3-tiny](https://github.com/qqwweee/keras-yolo3)**
+- [x] **train [YOLOv3-tiny](https://github.com/AlexeyAB/darknet)**
 - [ ] test inference
 - [ ] **setup [AirSim](https://github.com/FSTDriverless/AirSim)**
   - [ ] add cone position information
