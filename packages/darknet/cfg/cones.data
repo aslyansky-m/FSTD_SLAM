@@ -1,0 +1,6 @@
+classes= 3
+train  = /home/maxima/cone_detection/data/train.txt
+valid  = /home/maxima/cone_detection/data/test.txt
+names = /home/maxima/cone_detection/data/obj.names
+backup = backup/
+
