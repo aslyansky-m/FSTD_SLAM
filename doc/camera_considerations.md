@@ -5,7 +5,7 @@
   - be ROS integrated
   - have built-in IMU
   - be industrial: high dynamic range, global shutter, precise calibration
-  - RGB is better than monochromatic although it depends on detector perforamce with grayscale images
+  - RGB is better than monochromatic although it depends on detector performance with grayscale images
   - have wide FOV
   - be stereo
   - have good SDK
