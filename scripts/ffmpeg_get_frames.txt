@@ -1,0 +1,5 @@
+ffmpeg.exe -i .\v3.mp4 -vf "select=not(mod(n\,20))" -vsync vfr photos/v3_%04d.png
+
+ffmpeg -i in.mp4 -vf scale=672:-2 out.mp4
+
+ffmpeg -i out.mp4 -filter:v "crop=in_w:376" v.mp4
