@@ -29,11 +29,14 @@ See [wiki/Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installati
 Currently working on **bold**
 
 ## Visual Cone Detection
-- [x] **annotate real data**
+- [x] annotate real data
   - see [instructions](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/cone_dataset.md)
-- [x] **train [YOLOv3-tiny](https://github.com/AlexeyAB/darknet)**
-- [ ] test inference
-- [ ] **setup [AirSim](https://github.com/FSTDriverless/AirSim)**
+- [x] train [YOLOv3-tiny](https://github.com/AlexeyAB/darknet)
+- [x] architecture search
+  see [yolo_cone_detection.md](doc/yolo_cone_detection.md)
+- [ ] rewrite with [TensorRT](https://github.com/vat-nvidia/deepstream-plugins)
+- [ ] test inference performance on Xavier
+- [ ] setup [AirSim](https://github.com/FSTDriverless/AirSim) - **next project**
   - [ ] add cone position information
   - [ ] dataset generation pipeline
   - [ ] augmentation
@@ -41,13 +44,13 @@ Currently working on **bold**
     - [ ] noise 
     - [ ] low light
   - [ ] generate dataset
-- [ ] hyper parameter tuning
-- [ ] retrain the network
-- [ ] test in real-world
-- [ ] test inference performance on Xavier
 - [ ] improvements:
   - [ ] add sub-pixel refinement
-  - [ ] add tracking, consider [this](https://github.com/bendidi/Tracking-with-darkflow)
+- [x] **add tracking** 
+  - [x] implement KLT - works OK
+  - [x] test opencv multitracker - poor
+  - [x] implement ORB cone descriptor - need to test
+  - [ ] test [Tracking-with-darkflow](https://github.com/bendidi/Tracking-with-darkflow)
 
 ## Visual SLAM Exploration
 - [x] test [orbslam 2](https://github.com/raulmur/ORB_SLAM2.git)
@@ -82,7 +85,7 @@ Currently working on **bold**
 - [x] test and store data
 - [ ] control LIDAR speed from ROS, see [here](http://wiki.ros.org/velodyne_driver)
 - [ ] filter LIDAR by FOV and distance, search for ring information, see [here](http://wiki.ros.org/velodyne_pointcloud)
-- [ ] **LIDAR-camera calibration**
+- [ ] LIDAR-camera calibration
   - [x]  [lidar_camera_calibration](http://wiki.ros.org/lidar_camera_calibration) doesn't compile, todo: debug
   - [ ] try [this](https://github.com/agarwa65/lidar_camera_calibration)
 - [ ] fusion with camera
