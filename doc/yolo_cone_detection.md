@@ -7,7 +7,8 @@
 | 2      | **1** + routes, +1 yolo layer | ?   |    ?  |
 | 3      | **2** + resolution 608x416 | ?   |    ?  |
 | 4      | **2** + resolution 608x608 | ?   |    ?  |
-| 4      | **3** + 15 anchors         | ?   |    ?  |
+| 5      | **3** + 15 anchors         | ?   |    ?  |
+| 6      | **2** : gray               | ?   |    ?  |
 
   
 
