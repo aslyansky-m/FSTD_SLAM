@@ -32,8 +32,7 @@ Currently working on **bold**
 - [x] annotate real data
   - see [instructions](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/cone_dataset.md)
 - [x] train [YOLOv3-tiny](https://github.com/AlexeyAB/darknet)
-- [x] architecture search
-  see [yolo_cone_detection.md](doc/yolo_cone_detection.md)
+- [x] architecture search, see [yolo_cone_detection.md](doc/yolo_cone_detection.md)
 - [ ] rewrite with [TensorRT](https://github.com/vat-nvidia/deepstream-plugins)
 - [ ] test inference performance on Xavier
 - [ ] setup [AirSim](https://github.com/FSTDriverless/AirSim) - **next project**
