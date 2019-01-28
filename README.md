@@ -1,10 +1,12 @@
 # Simultaneous Localization and Mapping algorithms for Formula Student Driverless @Technion
+
 TODO: 
-- add detailed description
+- add detailed description  
 
-![Oops](doc/resources/yolo_demo.gif)  
+![Oops](doc/resources/yolo_demo.gif) 
 
-Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
+## See [demos](doc/demos.md)
+## See [wiki](wiki)
 
 ## Table of Contents
 - [Installation](https://github.com/aslyansky-m/FSTD_SLAM/wiki/Installation)  
