@@ -2,7 +2,7 @@
 TODO: 
 - add detailed description
 
-![Alt Text](https://github.com/aslyansky-m/FSTD_SLAM/blob/master/doc/resources/yolo_demo.gif)  
+![Oops](doc/resources/yolo_demo.gif)  
 
 Also, see our [wiki](https://github.com/aslyansky-m/FSTD_SLAM/wiki)
 
