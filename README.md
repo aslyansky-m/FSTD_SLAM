@@ -89,6 +89,7 @@ Currently working on **bold**
 - [ ] LIDAR-camera calibration
   - [x]  [lidar_camera_calibration](http://wiki.ros.org/lidar_camera_calibration) doesn't compile, todo: debug
   - [ ] try [this](https://github.com/agarwa65/lidar_camera_calibration)
+  - [ ] [velo2cam_calibration](https://github.com/beltransen/velo2cam_calibration)
 - [ ] fusion with camera
 
 ## LIDAR Cone Detection
