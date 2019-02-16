@@ -65,7 +65,9 @@ Currently working on **bold**
   - [x] compile
   - [x] test ROS node on provided data - works fine
 - [x] conclusion: **continue working with servo**
-- [ ] need to check [VIORB](https://github.com/jingpang/LearnVIORB) as well!!
+- [ ] need to check:
+    - [ ] [VIORB](https://github.com/jingpang/LearnVIORB)
+    - [ ] [ORB-YGZ-SLAM](https://github.com/gaoxiang12/ORB-YGZ-SLAM)
 
 ## Visual SLAM System
 - [ ] integrate servo with the main system
