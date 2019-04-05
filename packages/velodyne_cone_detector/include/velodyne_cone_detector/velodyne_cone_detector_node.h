@@ -89,11 +89,11 @@ namespace LIDAR {
     protected:
         void otlier_filter_impl(Cloud::Ptr &cloud_in, Cloud::Ptr &cloud_out) {
 
-            { // remove disatant object
+            { // remove distant object
                 pcl::PassThrough<Point> pass_z;
                 pass_z.setInputCloud(cloud_in);
                 pass_z.setFilterFieldName("z");
-                pass_z.setFilterLimits(-0.5f, 1.0f);
+                pass_z.setFilterLimits(-1.0f, 2.0f);
                 pass_z.filter(*cloud_out);
             }
 
@@ -106,10 +106,10 @@ namespace LIDAR {
                 seg.setOptimizeCoefficients(true);
                 seg.setModelType(pcl::SACMODEL_PLANE);
                 seg.setMethodType(pcl::SAC_RANSAC);
-                seg.setDistanceThreshold(0.03);
-                // at most 10 degrees from z axis
+                seg.setDistanceThreshold(0.01);
+                // at most 15 degrees from z axis
                 seg.setAxis(Eigen::Vector3f(0, 0, 1));
-                seg.setEpsAngle(pcl::deg2rad(10.0));
+                seg.setEpsAngle(pcl::deg2rad(15.0));
 
                 seg.setInputCloud(cloud_out);
                 seg.segment(*inliers, *plane_coefs);
@@ -128,9 +128,9 @@ namespace LIDAR {
                     float distance = sqrtf(pt.x * pt.x + pt.y * pt.y + pt.z * pt.z);
 
                     auto &s = segm[n];
-                    if ((height < 0.02) || (distance < 10.0 & height < 0.04))
+                    if ((height < 0.01) || (distance < 7.0 & height < 0.03))
                         s = PointClasses::ground;
-                    else if (distance > 25) {
+                    else if (distance > 40.0) {
                         s = PointClasses::too_far;
                     } else if (height > 0.5) {
                         s = PointClasses::too_high;

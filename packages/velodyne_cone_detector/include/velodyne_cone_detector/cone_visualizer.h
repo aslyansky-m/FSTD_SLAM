@@ -21,6 +21,8 @@ public:
     int v1 = 0;
     int v2 = 0;
 
+    int point_size = 5;
+
     const char* const c1 = "original";
     const char* const c2 = "processed";
 
@@ -37,8 +39,8 @@ public:
         viewer->setBackgroundColor (0.0, 0.0, 0.0, v2);
         viewer->addText(c2, 10, 10, "v2 text", v2);
 
-        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, c1);
-        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, c2);
+        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, point_size, c1);
+        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, point_size, c2);
         viewer->addCoordinateSystem (1.0);
     }
 
@@ -63,6 +65,9 @@ public:
         if( !viewer->updatePointCloud<PointC>( cloud_color,segmanetation, c2) ){
             viewer->addPointCloud<PointC>( cloud_color,segmanetation, c2, v2 );
         }
+
+        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, point_size, c1);
+        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, point_size, c2);
 
         viewer->removeAllShapes();
         viewer->addPlane(*plane_coefs, "plane",v2);

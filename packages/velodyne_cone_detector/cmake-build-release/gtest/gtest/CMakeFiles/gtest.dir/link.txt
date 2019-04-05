@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/maxima/FSTD_SLAM/packages/velodyne_cone_detector/cmake-build-release/gtest/gtest/src -Wl,-rpath,/home/maxima/FSTD_SLAM/packages/velodyne_cone_detector/cmake-build-release/gtest/gtest/src -lpthread 
