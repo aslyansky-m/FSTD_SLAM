@@ -1,0 +1,15 @@
+../../darknet/darknet detector calc_anchors ../../data/cones_updated.data yolov3-tiny_3l-cones_updated.cfg ../model_darknet/darknet53.conv.74 -num_of_clusters 9 -width 608 -height 416
+
+ num_of_clusters = 9, width = 608, height = 416 
+ read labels from 513 images 
+ loaded 	 image: 513 	 box: 6613
+ all loaded. 
+
+ calculating k-means++ ...
+
+
+ avg IoU = 79.32 % 
+
+Saving anchors to the file: anchors.txt 
+anchors =   3,  5,   4,  8,   7, 12,  10, 16,  13, 21,  18, 28,  25, 38,  35, 53,  51, 72
+

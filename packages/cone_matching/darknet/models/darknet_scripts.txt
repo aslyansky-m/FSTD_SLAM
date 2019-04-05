@@ -1,0 +1,5 @@
+./darknet detector valid_my cfg_/cones.data cfg_/yolov3-tiny_3l-cones.cfg backup/yolov3-tiny_3l-cones_last.weights
+
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+

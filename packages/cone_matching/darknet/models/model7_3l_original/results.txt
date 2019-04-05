@@ -1,0 +1,151 @@
+
+
+
+../../darknet/darknet detector recall ../../data/cones_updated.data yolov3-tiny_3l-cones.cfg backup/yolov3-tiny_3l-cones_last.weights > results.txt
+
+Total BFLOPS 15.180 
+
+layer     filters    size              input                output
+   0 conv     16  3 x 3 / 1   608 x 608 x   3   ->   608 x 608 x  16 0.319 BF
+   1 max          2 x 2 / 2   608 x 608 x  16   ->   304 x 304 x  16 0.006 BF
+   2 conv     32  3 x 3 / 1   304 x 304 x  16   ->   304 x 304 x  32 0.852 BF
+   3 max          2 x 2 / 2   304 x 304 x  32   ->   152 x 152 x  32 0.003 BF
+   4 conv     64  3 x 3 / 1   152 x 152 x  32   ->   152 x 152 x  64 0.852 BF
+   5 max          2 x 2 / 2   152 x 152 x  64   ->    76 x  76 x  64 0.001 BF
+   6 conv    128  3 x 3 / 1    76 x  76 x  64   ->    76 x  76 x 128 0.852 BF
+   7 max          2 x 2 / 2    76 x  76 x 128   ->    38 x  38 x 128 0.001 BF
+   8 conv    256  3 x 3 / 1    38 x  38 x 128   ->    38 x  38 x 256 0.852 BF
+   9 max          2 x 2 / 2    38 x  38 x 256   ->    19 x  19 x 256 0.000 BF
+  10 conv    512  3 x 3 / 1    19 x  19 x 256   ->    19 x  19 x 512 0.852 BF
+  11 max          2 x 2 / 1    19 x  19 x 512   ->    19 x  19 x 512 0.001 BF
+  12 conv   1024  3 x 3 / 1    19 x  19 x 512   ->    19 x  19 x1024 3.407 BF
+  13 conv    256  1 x 1 / 1    19 x  19 x1024   ->    19 x  19 x 256 0.189 BF
+  14 conv    512  3 x 3 / 1    19 x  19 x 256   ->    19 x  19 x 512 0.852 BF
+  15 conv     24  1 x 1 / 1    19 x  19 x 512   ->    19 x  19 x  24 0.009 BF
+  16 yolo
+  17 route  13
+  18 conv    128  1 x 1 / 1    19 x  19 x 256   ->    19 x  19 x 128 0.024 BF
+  19 upsample            2x    19 x  19 x 128   ->    38 x  38 x 128
+  20 route  19 8
+  21 conv    256  3 x 3 / 1    38 x  38 x 384   ->    38 x  38 x 256 2.555 BF
+  22 conv     24  1 x 1 / 1    38 x  38 x 256   ->    38 x  38 x  24 0.018 BF
+  23 yolo
+  24 route  21
+  25 conv    128  1 x 1 / 1    38 x  38 x 256   ->    38 x  38 x 128 0.095 BF
+  26 upsample            2x    38 x  38 x 128   ->    76 x  76 x 128
+  27 route  26 6
+  28 conv    128  3 x 3 / 1    76 x  76 x 256   ->    76 x  76 x 128 3.407 BF
+  29 conv     24  1 x 1 / 1    76 x  76 x 128   ->    76 x  76 x  24 0.035 BF
+  30 yolo
+Loading weights from backup/yolov3-tiny_3l-cones_last.weights...Done!
+    0    11    12	RPs/Img: 48.00	IOU: 66.24%	Recall:91.67%
+    1    25    37	RPs/Img: 55.00	IOU: 57.03%	Recall:67.57%
+    2    34    48	RPs/Img: 47.67	IOU: 59.16%	Recall:70.83%
+    3    45    60	RPs/Img: 49.25	IOU: 61.42%	Recall:75.00%
+    4    63    97	RPs/Img: 51.00	IOU: 54.63%	Recall:64.95%
+    5    77   111	RPs/Img: 47.83	IOU: 56.90%	Recall:69.37%
+    6    89   124	RPs/Img: 46.00	IOU: 58.59%	Recall:71.77%
+    7   106   141	RPs/Img: 45.25	IOU: 60.36%	Recall:75.18%
+    8   119   155	RPs/Img: 46.00	IOU: 61.75%	Recall:76.77%
+    9   126   165	RPs/Img: 45.90	IOU: 61.63%	Recall:76.36%
+   10   136   175	RPs/Img: 46.18	IOU: 62.51%	Recall:77.71%
+   11   145   184	RPs/Img: 45.00	IOU: 63.18%	Recall:78.80%
+   12   153   192	RPs/Img: 43.15	IOU: 63.80%	Recall:79.69%
+   13   165   204	RPs/Img: 42.57	IOU: 64.75%	Recall:80.88%
+   14   173   213	RPs/Img: 42.20	IOU: 64.75%	Recall:81.22%
+   15   179   219	RPs/Img: 40.19	IOU: 65.18%	Recall:81.74%
+   16   193   235	RPs/Img: 39.94	IOU: 65.32%	Recall:82.13%
+   17   207   249	RPs/Img: 39.22	IOU: 65.67%	Recall:83.13%
+   18   214   263	RPs/Img: 39.42	IOU: 65.14%	Recall:81.37%
+   19   222   272	RPs/Img: 39.65	IOU: 65.33%	Recall:81.62%
+   20   235   289	RPs/Img: 39.76	IOU: 65.78%	Recall:81.31%
+   21   245   302	RPs/Img: 39.27	IOU: 65.79%	Recall:81.13%
+   22   254   313	RPs/Img: 39.00	IOU: 65.84%	Recall:81.15%
+   23   263   323	RPs/Img: 38.67	IOU: 65.83%	Recall:81.42%
+   24   273   336	RPs/Img: 38.44	IOU: 65.77%	Recall:81.25%
+   25   286   350	RPs/Img: 39.31	IOU: 65.91%	Recall:81.71%
+   26   297   361	RPs/Img: 39.22	IOU: 66.18%	Recall:82.27%
+   27   310   381	RPs/Img: 39.71	IOU: 65.70%	Recall:81.36%
+   28   318   392	RPs/Img: 39.45	IOU: 65.61%	Recall:81.12%
+   29   344   425	RPs/Img: 40.53	IOU: 65.70%	Recall:80.94%
+   30   355   438	RPs/Img: 40.90	IOU: 65.98%	Recall:81.05%
+   31   381   473	RPs/Img: 41.97	IOU: 65.64%	Recall:80.55%
+   32   399   498	RPs/Img: 42.45	IOU: 65.36%	Recall:80.12%
+   33   407   507	RPs/Img: 42.94	IOU: 65.47%	Recall:80.28%
+   34   414   517	RPs/Img: 43.20	IOU: 65.41%	Recall:80.08%
+   35   422   530	RPs/Img: 44.08	IOU: 65.29%	Recall:79.62%
+   36   431   542	RPs/Img: 45.59	IOU: 65.11%	Recall:79.52%
+   37   439   550	RPs/Img: 45.42	IOU: 65.15%	Recall:79.82%
+   38   450   562	RPs/Img: 45.44	IOU: 65.12%	Recall:80.07%
+   39   459   571	RPs/Img: 46.55	IOU: 65.21%	Recall:80.39%
+   40   465   578	RPs/Img: 46.93	IOU: 65.21%	Recall:80.45%
+   41   471   587	RPs/Img: 48.12	IOU: 65.17%	Recall:80.24%
+   42   481   598	RPs/Img: 49.47	IOU: 65.19%	Recall:80.43%
+   43   491   614	RPs/Img: 51.32	IOU: 64.91%	Recall:79.97%
+   44   493   616	RPs/Img: 52.31	IOU: 64.88%	Recall:80.03%
+   45   505   631	RPs/Img: 53.89	IOU: 64.75%	Recall:80.03%
+   46   513   640	RPs/Img: 54.89	IOU: 64.93%	Recall:80.16%
+   47   525   653	RPs/Img: 56.02	IOU: 64.86%	Recall:80.40%
+   48   537   667	RPs/Img: 56.73	IOU: 64.86%	Recall:80.51%
+   49   538   668	RPs/Img: 57.28	IOU: 64.87%	Recall:80.54%
+   50   551   682	RPs/Img: 58.33	IOU: 65.01%	Recall:80.79%
+   51   556   687	RPs/Img: 58.04	IOU: 65.08%	Recall:80.93%
+   52   569   700	RPs/Img: 58.30	IOU: 65.27%	Recall:81.29%
+   53   581   714	RPs/Img: 58.98	IOU: 65.17%	Recall:81.37%
+   54   590   723	RPs/Img: 58.67	IOU: 65.29%	Recall:81.60%
+   55   600   738	RPs/Img: 59.09	IOU: 65.17%	Recall:81.30%
+   56   607   745	RPs/Img: 60.00	IOU: 65.27%	Recall:81.48%
+   57   631   770	RPs/Img: 61.09	IOU: 65.87%	Recall:81.95%
+   58   653   794	RPs/Img: 62.37	IOU: 66.23%	Recall:82.24%
+   59   686   832	RPs/Img: 63.57	IOU: 66.62%	Recall:82.45%
+   60   696   844	RPs/Img: 64.18	IOU: 66.84%	Recall:82.46%
+   61   722   872	RPs/Img: 65.42	IOU: 67.26%	Recall:82.80%
+   62   747   900	RPs/Img: 66.40	IOU: 67.65%	Recall:83.00%
+   63   787   943	RPs/Img: 67.33	IOU: 68.23%	Recall:83.46%
+   64   809   966	RPs/Img: 68.66	IOU: 68.53%	Recall:83.75%
+   65   834   991	RPs/Img: 69.53	IOU: 68.89%	Recall:84.16%
+   66   846  1005	RPs/Img: 70.10	IOU: 68.90%	Recall:84.18%
+   67   855  1014	RPs/Img: 70.53	IOU: 69.10%	Recall:84.32%
+   68   867  1039	RPs/Img: 71.07	IOU: 68.80%	Recall:83.45%
+   69   912  1086	RPs/Img: 72.10	IOU: 70.04%	Recall:83.98%
+   70   937  1111	RPs/Img: 73.00	IOU: 70.34%	Recall:84.34%
+   71   963  1137	RPs/Img: 73.61	IOU: 70.59%	Recall:84.70%
+   72  1007  1181	RPs/Img: 74.59	IOU: 71.68%	Recall:85.27%
+   73  1026  1205	RPs/Img: 75.78	IOU: 71.77%	Recall:85.15%
+   74  1051  1238	RPs/Img: 76.37	IOU: 71.69%	Recall:84.89%
+   75  1078  1268	RPs/Img: 77.55	IOU: 71.82%	Recall:85.02%
+   76  1116  1309	RPs/Img: 78.65	IOU: 72.04%	Recall:85.26%
+   77  1163  1361	RPs/Img: 79.46	IOU: 72.24%	Recall:85.45%
+   78  1183  1385	RPs/Img: 79.85	IOU: 72.21%	Recall:85.42%
+   79  1189  1392	RPs/Img: 80.16	IOU: 72.27%	Recall:85.42%
+   80  1226  1432	RPs/Img: 80.78	IOU: 72.39%	Recall:85.61%
+   81  1268  1475	RPs/Img: 81.35	IOU: 72.64%	Recall:85.97%
+   82  1273  1484	RPs/Img: 81.53	IOU: 72.60%	Recall:85.78%
+   83  1300  1511	RPs/Img: 82.07	IOU: 72.83%	Recall:86.04%
+   84  1304  1515	RPs/Img: 81.47	IOU: 72.90%	Recall:86.07%
+   85  1330  1548	RPs/Img: 82.49	IOU: 72.84%	Recall:85.92%
+   86  1360  1586	RPs/Img: 82.83	IOU: 72.83%	Recall:85.75%
+   87  1381  1610	RPs/Img: 83.44	IOU: 72.93%	Recall:85.78%
+   88  1416  1645	RPs/Img: 83.82	IOU: 73.50%	Recall:86.08%
+   89  1444  1676	RPs/Img: 84.57	IOU: 73.60%	Recall:86.16%
+   90  1465  1705	RPs/Img: 84.87	IOU: 73.51%	Recall:85.92%
+   91  1491  1733	RPs/Img: 85.38	IOU: 73.64%	Recall:86.04%
+   92  1517  1762	RPs/Img: 86.06	IOU: 73.71%	Recall:86.10%
+   93  1561  1812	RPs/Img: 86.51	IOU: 73.77%	Recall:86.15%
+   94  1594  1849	RPs/Img: 86.99	IOU: 73.86%	Recall:86.21%
+   95  1613  1873	RPs/Img: 87.68	IOU: 73.85%	Recall:86.12%
+   96  1622  1883	RPs/Img: 87.28	IOU: 73.88%	Recall:86.14%
+   97  1642  1905	RPs/Img: 87.68	IOU: 73.95%	Recall:86.19%
+   98  1679  1945	RPs/Img: 88.00	IOU: 74.01%	Recall:86.32%
+   99  1698  1964	RPs/Img: 88.16	IOU: 74.12%	Recall:86.46%
+  100  1732  1999	RPs/Img: 88.96	IOU: 74.20%	Recall:86.64%
+  101  1755  2022	RPs/Img: 89.70	IOU: 74.31%	Recall:86.80%
+  102  1789  2060	RPs/Img: 89.83	IOU: 74.29%	Recall:86.84%
+  103  1828  2100	RPs/Img: 90.45	IOU: 74.43%	Recall:87.05%
+  104  1851  2127	RPs/Img: 91.10	IOU: 74.48%	Recall:87.02%
+  105  1878  2156	RPs/Img: 91.58	IOU: 74.55%	Recall:87.11%
+  106  1913  2192	RPs/Img: 91.96	IOU: 74.64%	Recall:87.27%
+  107  1917  2196	RPs/Img: 91.53	IOU: 74.68%	Recall:87.30%
+  108  1941  2222	RPs/Img: 91.85	IOU: 74.74%	Recall:87.35%
+  109  1985  2267	RPs/Img: 92.20	IOU: 75.21%	Recall:87.56%
+
