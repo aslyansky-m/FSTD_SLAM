@@ -1,0 +1,9 @@
+[submodule "packages/SERVO"]
+	path = packages/SERVO
+	url = https://github.com/grafue/SERVO.git
+[submodule "packages/loam_velodyne"]
+	path = packages/loam_velodyne
+	url = https://github.com/laboshinl/loam_velodyne.git
+[submodule "packages/velodyne"]
+	path = packages/velodyne
+	url = https://github.com/ros-drivers/velodyne.git
