@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: velodyne_cone_detector
-Description: Description of velodyne_cone_detector
-Version: 0.0.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 

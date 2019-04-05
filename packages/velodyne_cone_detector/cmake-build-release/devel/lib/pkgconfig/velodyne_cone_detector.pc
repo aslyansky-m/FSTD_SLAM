@@ -1,8 +1,0 @@
-prefix=/home/maxima/FSTD_SLAM/packages/velodyne_cone_detector/cmake-build-release/devel
-
-Name: velodyne_cone_detector
-Description: Description of velodyne_cone_detector
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/maxima/FSTD_SLAM/packages/velodyne_cone_detector/cmake-build-release/devel/lib 
-Requires: 
