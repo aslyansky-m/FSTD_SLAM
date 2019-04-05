@@ -137,6 +137,7 @@ Currently working on **bold**
   - [ ] add lidar, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md)
   - [ ] add IMU, see [here](https://github.com/Microsoft/AirSim/tree/master/AirLib/include/sensors/imu)
   - [ ] integrate with ROS, see [here](https://github.com/Microsoft/AirSim/blob/master/docs/ros.md)
+- [ ] [fssim](https://github.com/AMZ-Driverless/fssim) - a new one
   
 ## Hardware
 - [x] camera - ZED
