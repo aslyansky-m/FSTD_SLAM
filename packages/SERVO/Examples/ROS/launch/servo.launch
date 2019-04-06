@@ -1,0 +1,25 @@
+<launch>
+	rosparam set use_sim_time true
+  	<node pkg="rosbag" type="play" name="player" args="-r 1 -s 0 --pause $(find orb_slam2)/../SERVO.bag"/>
+
+<!--	Use this section if your odometry estimates are not published to the hardcoded topics -->
+<!--
+	<remap from="/rovio/odometry" to=differentOdometryTopic/>
+	<remap from="/rovio/extrinsics0" to=differentExtrinsicsTopic/>
+-->
+
+
+<!--	This section is provided for convenience, it launches rovio. Change the filter and config path according to your setup. -->
+
+	<node pkg="rovio" type="rovio_node" name="rovio" output="screen">
+  	<param name="filter_config" value="$(find rovio)/cfg/rovio_servo.info"/>
+  	<param name="camera0_config" value="$(find rovio)/cfg/servo_cam0.yaml"/>
+  	<param name="camera1_config" value="$(find rovio)/cfg/servo_cam1.yaml"/>
+  	</node>
+
+
+<!--	This section launches the orb_slam2 node. (find orb_slam2)../../../ points to the root directory of the repository. Change the vocabulary and settings path according to your needs. The last parameters specifies whether the images have to be rectified online (in that case recitifaction parameters need to be available in the settings file) -->
+	<node pkg="orb_slam2" type="stereo" name="stereo" output="screen" args="$(find orb_slam2)../../../Vocabulary/ORBvoc.txt $(find orb_slam2)../../../Examples/Stereo/SERVO.yaml true">
+  	</node>
+
+</launch>

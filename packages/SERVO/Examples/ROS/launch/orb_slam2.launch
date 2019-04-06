@@ -1,0 +1,9 @@
+<launch>
+	rosparam set use_sim_time true
+  	<node pkg="rosbag" type="play" name="player" args="-r 1.0 -s 0 --pause $(find orb_slam2)/../SERVO.bag"/>
+
+<!--	This section launches the orb_slam2 node. (find orb_slam2)../../../ points to the root directory of the repository. Change the vocabulary and settings path according to your needs. The last parameters specifies whether the images have to be rectified online (in that case recitifaction parameters need to be available in the settings file) -->
+	<node pkg="orb_slam2" type="stereo" name="stereo" output="screen" args="$(find orb_slam2)../../../Vocabulary/ORBvoc.txt $(find orb_slam2)../../../Examples/Stereo/ORB_SLAM2.yaml true">
+  	</node>
+
+</launch>

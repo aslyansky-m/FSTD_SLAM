@@ -1,0 +1,150 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 471.547836
+Camera.fy: 471.547836
+Camera.cx: 396.163179
+Camera.cy: 261.288740
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+Camera.width: 752
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 20.0
+
+# stereo baseline times fx
+Camera.bf: 51.817399
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 35
+
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+LEFT.height: 480
+LEFT.width: 752
+LEFT.D: !!opencv-matrix
+   rows: 1
+   cols: 5
+   dt: d
+   data:[-0.303422, 0.099615, -0.000375, 0.000152, 0.000000]
+LEFT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [469.079122, 0.000000, 396.163179, 0.000000, 468.929504, 261.288740, 0.000000, 0.000000, 1.000000]
+LEFT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.999996, 0.001155, -0.002605, -0.001149, 0.999996, 0.002609, 0.002608, -0.002606, 0.999993]
+LEFT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [471.547836, 0.000000, 387.789700, 0.000000, 0.000000, 471.547836, 241.582283, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000]
+
+RIGHT.height: 480
+RIGHT.width: 752
+RIGHT.D: !!opencv-matrix
+   rows: 1
+   cols: 5
+   dt: d
+   data:[-0.296003, 0.087077, -0.000056, -0.000248, 0.000000]
+RIGHT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [466.386207, 0.000000, 366.755083, 0.000000, 466.376617, 223.429515, 0.000000, 0.000000, 1.000000]
+RIGHT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.999858, -0.000106, -0.016842, 0.000062, 0.999997, -0.002608, 0.016842, 0.002607, 0.999855]
+RIGHT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [471.547836, 0.000000, 387.789700, -51.817399, 0.000000, 471.547836, 241.582283, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000]
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1200
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20 # 20
+ORBextractor.minThFAST: 5 # 5
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.7 #0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize:2
+Viewer.CameraSize: 0.7 #0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -12 #-0.7
+Viewer.ViewpointZ: -8 #-1.8
+Viewer.ViewpointF: 500 #500
+
+
+#--------------------------------------------------------------------------------------------
+# Tracking Preferences
+#--------------------------------------------------------------------------------------------
+
+# Choose initial position of the camera frame.
+# 0 identitiy: Default setting, set Twc to identity
+# 1 external: Set Twc using external pose measurement
+Tracking.InitialPosition: 0
+
+# Choose motion model to be employed for pose prediction
+# 0 internal: T_cw(k) = mVelocity(k-1,k-2)*mLastPose(k-2) = (T_cw(k-1)*T_wc(k-2))*T_cw(k-1)
+# 1 external: same as above but feed external measurement for estimation mVelocity = T_cw(k-1)*T_wc(k-1)
+Tracking.MotionModelSource: 0
+
+# Choose whether system should be reset completely if tracking is lost soon after last new map creation
+Tracking.ResetIfLost: 0
+
+# Choose max number of frames until keyframe insertion. Defaults to framesPerSecond if invalid, eg <1
+Tracking.MaxNumberFramesBeforeKF: -1
+
+# Choose whether - in the case of lost tracking - pose estimates obtained by velocity model should be set as next valid pose
+Tracking.DeadReckoning: 0
+
+# Choose whether an initial guess of the pose should be included as fixed node in the pose optimization
+Tracking.PoseOptimizationPrior: 0
+
+# Choose weak tracking threshold. If the best covisible keyframe has less than this number of covisible features
+# the relative position will be reinforced with additional edges in the bundle adjustment. Set -1 for no reinforcement.
+Tracking.ReinforceWeakTrackingThreshold: -1
+
+# Choose whether the number of extracted features per frame should be adapted according to number of matched points
+Tracking.AdaptNFeatures: 0
+

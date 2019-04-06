@@ -1,0 +1,10 @@
+*.txt
+*.so
+*.o
+*.settings.xml
+*.log
+*.cmake
+*.make
+
+build
+Thirdparty
