@@ -4,6 +4,3 @@
 [submodule "packages/velodyne"]
 	path = packages/velodyne
 	url = https://github.com/ros-drivers/velodyne.git
-[submodule "packages/darknet"]
-	path = packages/darknet
-	url = https://github.com/AlexeyAB/darknet.git
