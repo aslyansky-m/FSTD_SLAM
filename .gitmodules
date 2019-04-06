@@ -7,6 +7,3 @@
 [submodule "packages/darknet"]
 	path = packages/darknet
 	url = https://github.com/AlexeyAB/darknet.git
-[submodule "packages/rovio"]
-	path = packages/rovio
-	url = https://github.com/ethz-asl/rovio.git

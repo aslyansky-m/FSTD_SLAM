@@ -1,0 +1,16 @@
+image_width: 752
+image_height: 340
+camera_name: cam1
+camera_matrix:
+  rows: 3
+  cols: 3
+  # data: [466.584856656, 0.0, 368.123678417, 0.0, 466.651437075, 222.702424106, 0.0, 0.0, 1.0] # this from renaud
+  data: [466.386207, 0.000000, 366.755083, 0.000000, 466.376617, 223.429515, 0.000000, 0.000000, 1.000000] # this from our own calibration
+distortion_model: equidistant # plumb_bob # was different equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [-0.00493809690527, 0.0459050513494, -0.0729502294639, 0.0447883261061] # from renaud
+  # data: [-0.296003, 0.087077, -0.000056, -0.000248, 0.000000] # our own
+
+

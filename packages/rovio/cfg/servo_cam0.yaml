@@ -1,0 +1,15 @@
+image_width: 752
+image_height: 340
+camera_name: cam0
+camera_matrix:
+  rows: 3
+  cols: 3
+  # data: [469.155229619, 0.0, 394.794582606, 0.0, 469.127250586, 260.918848036, 0.0, 0.0, 1.0] # from renaud
+  data: [469.079122, 0.000000, 396.163179, 0.000000, 468.929504, 261.288740, 0.000000, 0.000000, 1.000000] # our own
+distortion_model: equidistant # plum_bob
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [0.00476352023077, 0.00845986098942, -0.00987591201205, 0.0065155125732] # from renaud
+  #data: [0.303422, 0.099615, -0.000375, 0.000152, 0.000000] # from our own
+
