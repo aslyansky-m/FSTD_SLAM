@@ -8,9 +8,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <pthread.h>
 #include <stdint.h>
+#include <assert.h>
+#include <pthread.h>
 
+#ifndef LIB_API
 #ifdef LIB_EXPORTS
 #if defined(_MSC_VER)
 #define LIB_API __declspec(dllexport)
@@ -24,9 +26,12 @@
 #define LIB_API
 #endif
 #endif
+#endif
+
+#define NFRAMES 1
+#define SECRET_NUM -1234
 
 #ifdef GPU
-#define BLOCK 512
 
 #include "cuda_runtime.h"
 #include "curand.h"
@@ -45,7 +50,7 @@ struct network;
 typedef struct network network;
 
 struct network_state;
-typedef struct network_state;
+typedef struct network_state network_state;
 
 struct layer;
 typedef struct layer layer;
@@ -68,8 +73,6 @@ typedef struct metadata metadata;
 struct tree;
 typedef struct tree tree;
 
-
-#define SECRET_NUM -1234
 extern int gpu_index;
 
 // option_list.h
@@ -316,6 +319,8 @@ struct layer {
     float *col_image;
     float * delta;
     float * output;
+    int delta_pinned;
+    int output_pinned;
     float * loss;
     float * squared;
     float * norms;
@@ -362,7 +367,9 @@ struct layer {
     float *c_cpu;
     float *dc_cpu;
 
-    float * binary_input;
+    float *binary_input;
+    uint32_t *bin_re_packed_input;
+    char *t_bit_input;
 
     struct layer *input_layer;
     struct layer *self_layer;
@@ -454,6 +461,8 @@ struct layer {
 
     float *binary_input_gpu;
     float *binary_weights_gpu;
+    float *bin_conv_shortcut_in_gpu;
+    float *bin_conv_shortcut_out_gpu;
 
     float * mean_gpu;
     float * variance_gpu;
@@ -509,7 +518,7 @@ struct layer {
 
 // network.h
 typedef enum {
-    CONSTANT, STEP, EXP, POLY, STEPS, SIG, RANDOM
+    CONSTANT, STEP, EXP, POLY, STEPS, SIG, RANDOM, SGDR
 } learning_rate_policy;
 
 // network.h
@@ -525,6 +534,9 @@ typedef struct network {
     learning_rate_policy policy;
 
     float learning_rate;
+    float learning_rate_min;
+    float learning_rate_max;
+    int batches_per_cycle;
     float momentum;
     float decay;
     float gamma;
@@ -561,7 +573,9 @@ typedef struct network {
     float saturation;
     float hue;
     int random;
-    int small_object;
+    int track;
+    int augment_speed;
+    int try_fix_nan;
 
     int gpu_index;
     tree *hierarchy;
@@ -582,6 +596,8 @@ typedef struct network {
     float *output_gpu;
 
     float *input_state_gpu;
+    float *input_pinned_cpu;
+    int input_pinned_cpu_flag;
 
     float **input_gpu;
     float **truth_gpu;
@@ -687,7 +703,9 @@ typedef struct load_args {
     int scale;
     int center;
     int coords;
-    int small_object;
+    int mini_batch;
+    int track;
+    int augment_speed;
     float jitter;
     int flip;
     float angle;
@@ -740,6 +758,7 @@ LIB_API void do_nms_obj(detection *dets, int total, int classes, float thresh);
 
 // network.h
 LIB_API float *network_predict(network net, float *input);
+LIB_API float *network_predict_ptr(network *net, float *input);
 LIB_API detection *get_network_boxes(network *net, int w, int h, float thresh, float hier, int *map, int relative, int *num, int letter);
 LIB_API void free_detections(detection *dets, int n);
 LIB_API void fuse_conv_batchnorm(network net);
@@ -751,14 +770,17 @@ LIB_API layer* get_network_layer(network* net, int i);
 LIB_API detection *make_network_boxes(network *net, float thresh, int *num);
 LIB_API void reset_rnn(network *net);
 LIB_API float *network_predict_image(network *net, image im);
-LIB_API float validate_detector_map(char *datacfg, char *cfgfile, char *weightfile, float thresh_calc_avg_iou, const float iou_thresh, network *existing_net);
-LIB_API void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, int ngpus, int clear, int dont_show, int calc_map);
+LIB_API float validate_detector_map(char *datacfg, char *cfgfile, char *weightfile, float thresh_calc_avg_iou, const float iou_thresh, const int map_points, network *existing_net);
+LIB_API void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, int ngpus, int clear, int dont_show, int calc_map, int mjpeg_port);
+LIB_API void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh,
+    float hier_thresh, int dont_show, int ext_output, int save_labels, char *outfile);
 LIB_API int network_width(network *net);
 LIB_API int network_height(network *net);
 LIB_API void optimize_picture(network *net, image orig, int max_layer, float scale, float rate, float thresh, int norm);
 
 // image.h
 LIB_API image resize_image(image im, int w, int h);
+LIB_API void copy_image_from_bytes(image im, char *pdata);
 LIB_API image letterbox_image(image im, int w, int h);
 LIB_API void rgbgr_image(image im);
 LIB_API image make_image(int w, int h, int c);
@@ -773,9 +795,11 @@ LIB_API void free_data(data d);
 LIB_API pthread_t load_data(load_args args);
 LIB_API pthread_t load_data_in_thread(load_args args);
 
-// cuda.h
+// dark_cuda.h
 LIB_API void cuda_pull_array(float *x_gpu, float *x, size_t n);
+LIB_API void cuda_pull_array_async(float *x_gpu, float *x, size_t n);
 LIB_API void cuda_set_device(int n);
+LIB_API void *cuda_get_context();
 
 // utils.h
 LIB_API void free_ptrs(void **ptrs, int n);
@@ -787,6 +811,17 @@ LIB_API tree *read_tree(char *filename);
 // option_list.h
 LIB_API metadata get_metadata(char *file);
 
+
+// http_stream.h
+LIB_API void delete_json_sender();
+LIB_API void send_json_custom(char const* send_buf, int port, int timeout);
+LIB_API double get_time_point();
+void start_timer();
+void stop_timer();
+double get_time();
+void stop_timer_and_show();
+void stop_timer_and_show_name(char *name);
+void show_total_time();
 
 #ifdef __cplusplus
 }
