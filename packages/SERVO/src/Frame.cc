@@ -21,6 +21,7 @@
 #include "Frame.h"
 #include "Converter.h"
 #include "ORBmatcher.h"
+#include "Common.h"
 #include <thread>
 
 namespace ORB_SLAM2
@@ -31,6 +32,16 @@ bool Frame::mbInitialComputations=true;
 float Frame::cx, Frame::cy, Frame::fx, Frame::fy, Frame::invfx, Frame::invfy;
 float Frame::mnMinX, Frame::mnMinY, Frame::mnMaxX, Frame::mnMaxY;
 float Frame::mfGridElementWidthInv, Frame::mfGridElementHeightInv;
+
+
+static std::string  names_file = "/home/maxima/cone_detection/final/data/cones.names";
+static std::string  cfg_file = "/home/maxima/cone_detection/final/models/model6_small_obj_updated/yolov3-tiny_3l-cones_updated.cfg";
+static std::string  weights_file = "/home/maxima/cone_detection/final/models/model6_small_obj_updated/backup/yolov3-tiny_3l-cones_updated_last.weights";
+static std::string filename = "/home/maxima/cone_detection/final/data/dataset_validation/v10_0002.png";
+//auto obj_names = objects_names_from_file(names_file);
+static double thresh = 0.8;
+static Detector detector(cfg_file, weights_file);
+
 
 Frame::Frame()
 {}
@@ -62,6 +73,8 @@ Frame::Frame(const cv::Mat &imLeft, const cv::Mat &imRight, const double &timeSt
     :mpORBvocabulary(voc),mpORBextractorLeft(extractorLeft),mpORBextractorRight(extractorRight), mTimeStamp(timeStamp), mK(K.clone()),mDistCoef(distCoef.clone()), mbf(bf), mThDepth(thDepth),
      mpReferenceKF(static_cast<KeyFrame*>(NULL))
 {
+    detector.nms = 0.4;
+
     // Frame ID
     mnId=nNextId++;
 
@@ -190,6 +203,20 @@ Frame::Frame(const cv::Mat &imGray, const double &timeStamp, ORBextractor* extra
     // ORB extraction
     ExtractORB(0,imGray);
 
+
+
+
+    // detect objects
+    auto cur_frame = imGray.clone();
+    auto frame_size = cur_frame.size();
+    auto det_image = detector.mat_to_image_resize(cur_frame);
+    auto current_image = det_image;
+
+    vector<bbox_t> objects = detector.detect_resized(*current_image, frame_size.width, frame_size.height, thresh, false);
+
+    // update class id
+    UpdateObjectId(mvKeys,objects);
+
     N = mvKeys.size();
 
     if(mvKeys.empty())
@@ -225,6 +252,20 @@ Frame::Frame(const cv::Mat &imGray, const double &timeStamp, ORBextractor* extra
     mb = mbf/fx;
 
     AssignFeaturesToGrid();
+}
+
+void Frame::UpdateObjectId(vector<cv::KeyPoint>& _keypoints, const vector<bbox_t> &objects){
+
+    for (auto &kp : _keypoints){
+        for(auto box : objects){
+            if(kp.pt.x > box.x && kp.pt.x < box.x + box.w &&
+               kp.pt.y > box.y && kp.pt.y < box.y + box.h){
+                kp.class_id = box.obj_id;
+            }
+        }
+
+    }
+
 }
 
 void Frame::AssignFeaturesToGrid()

@@ -61,6 +61,7 @@
 #include <vector>
 #include <iostream>
 
+
 #include "ORBextractor.h"
 
 
@@ -1117,7 +1118,10 @@ void ORBextractor::operator()( InputArray _image, InputArray _mask, vector<KeyPo
         // And add the keypoints to the output
         _keypoints.insert(_keypoints.end(), keypoints.begin(), keypoints.end());
     }
+
+
 }
+
 
 void ORBextractor::ComputePyramid(cv::Mat image)
 {
