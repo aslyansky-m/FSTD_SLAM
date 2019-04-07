@@ -29,6 +29,8 @@
 #include "ORBVocabulary.h"
 #include "KeyFrame.h"
 #include "ORBextractor.h"
+#include "Common.h"
+#include "yolo_v2_class.hpp"
 
 #include <opencv2/opencv.hpp>
 
@@ -194,6 +196,9 @@ private:
     // Only for the RGB-D case. Stereo must be already rectified!
     // (called in the constructor).
     void UndistortKeyPoints();
+
+    // TODO: comment
+    void UpdateObjectId(vector<cv::KeyPoint>& _keypoints, const vector<bbox_t> &objects);
 
     // Computes image bounds for the undistorted image (called in the constructor).
     void ComputeImageBounds(const cv::Mat &imLeft);
